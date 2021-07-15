@@ -11,10 +11,10 @@ const renderBoard = (game) => {
 
   for (let r = 0; r < game.rowNum; r++) {
     for (let c = 0; c < game.colNum; c++) {
-      let cellContent = '';
-      if (r === c) {
-        cellContent = '<img src="assets/black.svg">';
-      }
+      const cellContent = '';
+      // if (game.board[r][c].state === false) {
+      //   cellContent = '<img src="assets/black.svg">';
+      // }
       elBoard.append(`
         <div class="cell" data-row="${r}" data-col="${c}">
           ${cellContent}
