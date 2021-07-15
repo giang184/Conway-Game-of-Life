@@ -1,4 +1,4 @@
-### Plan
+### Technology
 1. HTML5+CSS3
 2. JavaScript/ES2018+
 3. jQuery
