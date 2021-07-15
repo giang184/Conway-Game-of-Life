@@ -15,6 +15,16 @@ export class GameBoard {
       }
     }
   }
+
+  // iterate () {
+  //   for (let r = 0; r < this.rowNum; r++) {
+  //     for (let c = 0; c < this.colNum; c++) {
+  //       if (this.board[r][c + 1]) {
+  //         this.board[r][c] = true;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 class Cell {
