@@ -24,31 +24,18 @@ const renderBoard = (game) => {
   }
 };
 
-const addEventListener1 = (game) => {
-  // const elCells = $('.cell');
-  document.getElementById('butt').addEventListener('click', async function (event) {
+const addEventListeners = (game) => {
+  const elCells = $('.cell');
+  const elButton = $('#iterate');
+  elButton.off().on('click', function () {
     game.board[1][1].state = !game.board[1][1].state;
     console.log(1);
     renderBoard(game);
     console.log(2);
-    // addEventListeners(game);
+    addEventListeners(game);
   });
-  // elCells.on('click', async function (event) {
-  //   const el = $(this);
-  //   const row = el.data('row');
-  //   const col = el.data('col');
 
-  //   game.board[row][col].state = !game.board[row][col].state;
-
-  //   renderBoard(game);
-  //   console.log(3);
-  //   addEventListeners(game);
-  // });
-};
-
-const addEventListener2 = (game) => {
-  const elCells = $('.cell');
-  elCells.on('click', async function (event) {
+  elCells.one('click', function (event) {
     const el = $(this);
     const row = el.data('row');
     const col = el.data('col');
@@ -57,15 +44,14 @@ const addEventListener2 = (game) => {
 
     renderBoard(game);
     console.log(3);
-    addEventListener2(game);
+    addEventListeners(game);
   });
 };
 
 const main = () => {
   const game = new GameBoard(30, 50);
   renderBoard(game);
-  addEventListener1(game);
-  addEventListener2(game);
+  addEventListeners(game);
 };
 
 main();
