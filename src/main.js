@@ -28,14 +28,16 @@ const addEventListeners = (game) => {
   const elCells = $('.cell');
   const elButton = $('#iterate');
   elButton.off().on('click', function () {
-    game.board[1][1].state = !game.board[1][1].state;
+    game.iterate();
     console.log(1);
+    console.log(game);
     renderBoard(game);
     console.log(2);
     addEventListeners(game);
+    console.log(3);
   });
 
-  elCells.one('click', function (event) {
+  elCells.off().on('click', function (event) {
     const el = $(this);
     const row = el.data('row');
     const col = el.data('col');
@@ -43,15 +45,15 @@ const addEventListeners = (game) => {
     game.board[row][col].state = !game.board[row][col].state;
 
     renderBoard(game);
-    console.log(3);
     addEventListeners(game);
   });
 };
 
 const main = () => {
-  const game = new GameBoard(30, 50);
+  const game = new GameBoard(20, 30);
   renderBoard(game);
   addEventListeners(game);
+  console.log(game);
 };
 
 main();
