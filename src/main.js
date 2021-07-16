@@ -50,7 +50,7 @@ const addEventListeners = (game) => {
 };
 
 const main = () => {
-  const game = new GameBoard(20, 30);
+  const game = new GameBoard(10, 10);
   renderBoard(game);
   addEventListeners(game);
   console.log(game);

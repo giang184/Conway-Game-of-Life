@@ -20,7 +20,7 @@ export class GameBoard {
     const array = [];
     for (let r = row - 1; r <= row + 1; r++) {
       for (let c = col - 1; c <= col + 1; c++) {
-        if (!(row === r && col === c) || row < 0 || col < 0 || row >= this.rowNum || col >= this.colNum) {
+        if (!((row === r && col === c) || r < 0 || c < 0 || r >= this.rowNum || c >= this.colNum) && this.board[r][c].state) {
           array.push(this.board[r][c]);
         }
       }
@@ -30,13 +30,18 @@ export class GameBoard {
 
   iterate () {
     for (let r = 0; r < this.rowNum; r++) {
-      for (let c = 0; c < this.colNum - 1; c++) {
-        if (this.board[r][c + 1].state) {
-          this.board[r][c].state = true;
+      for (let c = 0; c < this.colNum; c++) {
+        if (this.board[r][c].state) {
+          if (this.getNeighbors(r, c).length < 2 || this.getNeighbors(r, c).length >= 4) {
+            this.board[r][c].state = false;
+          }
+        } else {
+          if (this.getNeighbors(r, c).length === 3) {
+            this.board[r][c].state = true;
+          }
         }
       }
     }
-    console.log(this.getNeighbors(5, 2));
   }
 }
 
