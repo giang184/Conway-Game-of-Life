@@ -28,7 +28,7 @@ const addEventListeners = (game) => {
   const elCells = $('.cell');
   const elButton = $('#iterate');
   elButton.off().on('click', async function () {
-    for (let i = 1; i <= 1000; i++) {
+    for (let i = 1; i <= 20; i++) {
       setTimeout(function timer () {
         console.log(i);
         game.iterate();
