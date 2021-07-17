@@ -12,7 +12,7 @@ const renderBoard = (game) => {
   for (let r = 0; r < game.rowNum; r++) {
     for (let c = 0; c < game.colNum; c++) {
       let cellContent = '';
-      if (game.board[r][c].state === true) {
+      if (game.board[r][c]) {
         cellContent = '<img src="assets/black.svg">';
       }
       elBoard.append(`
@@ -27,30 +27,29 @@ const renderBoard = (game) => {
 const addEventListeners = (game) => {
   const elCells = $('.cell');
   const elButton = $('#iterate');
-  elButton.off().on('click', function () {
-    game.iterate();
-    console.log(1);
-    console.log(game);
-    renderBoard(game);
-    console.log(2);
-    addEventListeners(game);
-    console.log(3);
+  elButton.off().on('click', async function () {
+    for (let i = 1; i <= 1000; i++) {
+      setTimeout(function timer () {
+        console.log(i);
+        game.iterate();
+        renderBoard(game);
+        addEventListeners(game);
+      }, i * 500);
+    }
   });
 
   elCells.off().on('click', function (event) {
     const el = $(this);
     const row = el.data('row');
     const col = el.data('col');
-
-    game.board[row][col].state = !game.board[row][col].state;
-
+    game.board[row][col] = !game.board[row][col];
     renderBoard(game);
     addEventListeners(game);
   });
 };
 
 const main = () => {
-  const game = new GameBoard(10, 10);
+  const game = new GameBoard(30, 60);
   renderBoard(game);
   addEventListeners(game);
   console.log(game);
