@@ -26,19 +26,10 @@ const renderBoard = (game) => {
 
 const addEventListeners = (game) => {
   const elCells = $('.cell');
-  const elButton = $('#iterate');
-  elButton.off().on('click', async function () {
-    for (let i = 1; i <= 20; i++) {
-      setTimeout(function timer () {
-        console.log(i);
-        game.iterate();
-        renderBoard(game);
-        addEventListeners(game);
-      }, i * 500);
-    }
-  });
+  const elClearButton = $('#clear');
 
   elCells.off().on('click', function (event) {
+    event.preventDefault();
     const el = $(this);
     const row = el.data('row');
     const col = el.data('col');
@@ -46,13 +37,42 @@ const addEventListeners = (game) => {
     renderBoard(game);
     addEventListeners(game);
   });
+
+  elClearButton.off().on('click', async function () {
+    game.generateBoard();
+    renderBoard(game);
+    addEventListeners(game);
+  });
+
+  $('form#pattern').off().submit(async function (event) {
+    event.preventDefault();
+    const shape = $('#shape').val();
+    game.applyPattern(shape);
+    renderBoard(game);
+    addEventListeners(game);
+  });
+
+  $('form#iteration').off().submit(async function (event) {
+    event.preventDefault();
+    const num = parseInt($('#number').val());
+    const speed = parseInt($('#myRange').val());
+    console.log(typeof num);
+    console.log(num);
+    for (let i = 1; i <= num; i++) {
+      setTimeout(function timer () {
+        console.log(i);
+        game.iterate();
+        renderBoard(game);
+        addEventListeners(game);
+      }, i * speed);
+    }
+  });
 };
 
 const main = () => {
-  const game = new GameBoard(30, 60);
+  const game = new GameBoard(25, 50);
   renderBoard(game);
   addEventListeners(game);
-  console.log(game);
 };
 
 main();

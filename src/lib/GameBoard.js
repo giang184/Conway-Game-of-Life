@@ -52,4 +52,26 @@ export class GameBoard {
     }
     this.board = tempBoard;
   }
+
+  applyPattern (shape) {
+    this.generateBoard();
+    if (shape === 'Beacon') {
+      this.board[10][10] = true;
+      this.board[10][11] = true;
+      this.board[11][10] = true;
+      this.board[12][13] = true;
+      this.board[13][12] = true;
+      this.board[13][13] = true;
+    } else if (shape === 'Pulsar') {
+      this.board[20][20] = true;
+      this.board[20][21] = true;
+      this.board[20][22] = true;
+    } else if (shape === 'Pulsar') {
+      this.board[20][20] = true;
+      this.board[20][21] = true;
+      this.board[20][22] = true;
+    } else {
+      this.board[20][20] = true;
+    }
+  }
 }

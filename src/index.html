@@ -4,11 +4,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <title>Conway</title>
 </head>
 <body>
-  <h1>Conway's Game of Life</h1>
-  <button type="button" id="iterate">Iterate!</button>
-  <div id="game-board"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4" style="background-color:rgb(229, 190, 190);">
+        <h2>Conway's Game of Life</h2>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3">
+        <form id="pattern">
+          <label for="shape">Create your own board by clicking on the cells or choose a set pattern below: </label>
+          <select  id="shape">
+            <option>Beacon</option>
+            <option>Pulsar</option>
+            <option>Glider</option>
+            <option>Spaceship</option>
+          </select>
+          <br><br>
+          <button type="submit" class="btn-success">Apply Pattern</button>
+        </form>
+        <br><button id="clear" class="btn-danger">Clear Board</button>
+        <br><br>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3">
+        <form id="iteration">
+          <label for="number">Number of iterations: </label>
+          <select  id="number">
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+          <div class="slidecontainer">
+            <label for="range">speed: </label>
+            <input type="range" min="150" max="1000" value="500" class="slider" id="myRange">
+          </div>
+          <br>
+          <button type="submit" class="btn-primary">Go!</button>
+        </form>
+      </div>
+      <br><br><br><br><br><br>
+        <div id="game-board"></div>
+    </div>
+  </div>
 </body>
 </html>
