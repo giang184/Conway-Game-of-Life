@@ -28,6 +28,7 @@ const addEventListeners = (game) => {
   const elCells = $('.cell');
   const elClearButton = $('#clear');
   const elStopButton = $('#stoppage');
+  const elSingleButton = $('#single');
   const elpattern = $('#shape');
 
   elpattern.off().on('change', function (event) {
@@ -53,6 +54,12 @@ const addEventListeners = (game) => {
     addEventListeners(game);
   });
 
+  elSingleButton.off().on('click', async function () {
+    game.iterate();
+    renderBoard(game);
+    addEventListeners(game);
+  });
+
   $('form#iteration').off().submit(function (event) {
     event.preventDefault();
     const num = parseInt($('#number').val());
@@ -60,7 +67,6 @@ const addEventListeners = (game) => {
 
     for (let i = 1; i <= num; i++) {
       setTimeout(function timer () {
-        console.log(i);
         game.iterate();
         renderBoard(game);
         addEventListeners(game);
@@ -83,7 +89,7 @@ const addEventListeners = (game) => {
 };
 
 const main = () => {
-  const game = new GameBoard(30, 50);
+  const game = new GameBoard(20, 40);
   renderBoard(game);
   addEventListeners(game);
 };

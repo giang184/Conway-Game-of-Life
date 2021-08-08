@@ -10,9 +10,9 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <h2>Conway's Game of Life</h2>
-        <p>The Game of Life is a zero player game whose evolution is determined by its initial state. The game is set by creating an initial configuration by clicking on specific cells or choosing from a preset pattern. When the game is started, the state of the cells will live or die according to a set of rules. (see below)</p>
+        <p>The Game of Life is a zero player game whose evolution is determined by its initial state. The game is set by creating an initial configuration by clicking on specific cells or choosing from a preset pattern. When the game is started, the state of the cells will live or die according to a set of rules. (<a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">wikipedia</a>)</p>
       
         <h2>Rules</h2>
         <ol>
@@ -22,44 +22,45 @@
           <li>Any dead cell with exactly three live neighbours becomes a live cell.</li>
         </ol>
       </div>
-      <div class="col-sm-1"></div>
       <div class="col-sm-3">
-        <h2>Board Configurations</h2>
+        <h2>Board Setups</h2>
         <label for="shape">Create your own board by clicking on the cells or choose a set pattern below: </label>
         <select class="form-control" id="shape">
           <option>---</option>
           <option>Beacon</option>
-          <option>Pulsar</option>
           <option>Glider</option>
           <option>Spaceship</option>
+          <option>Pulsar</option>
         </select>
-        <br><button id="clear" class="btn-danger">Clear Board</button>
+        <br><button id="clear" class="btn btn-danger">Clear Board</button>
       </div>
-      <div class="col-sm-1"></div>
       <div class="col-sm-3">
-        <h2>Simulation Configurations</h2>
+        <h2>Simulation Modes</h2>
         <div id="go">
+          <div id= "single_iteration">
+            <label for="single">Single Iteration: &emsp;</label>
+            <button id="single" class="btn btn-success">GO!</button>
+          </div>
+          <br>
           <form id="iteration">
-            <label for="number">Number of iterations: </label>
+            <label for="number">Multiple Continuous iterations: </label>
             <select class="form-control" id="number">
-              <option>1</option>
-              <option>5</option>
               <option>10</option>
-              <option>50</option>
-              <option>5000</option>
+              <option>100</option>
+              <option>1000</option>
             </select>
             <br>
             <div class="slidecontainer">
               <label for="range">speed: </label>
-              <input type="range" min="150" max="1000" value="500" class="slider" id="myRange">
+              <input type="range" min="100" max="1000" value="500" class="slider" id="myRange">
             </div>
             <br>
-            <button type="submit" class="btn-primary">Go!</button>
+            <button type="submit" class="btn btn-success">GO!</button>
           </form>
         </div>
         <div id="stop">
           <label for="stoppage">click button to pause or choose a different iteration mode</label>
-          <button id="stoppage" class="btn-warning">Stop!</button>
+          <button id="stoppage" class="btn btn-warning">Pause!</button>
         </div>
       </div>
     </div>

@@ -56,78 +56,85 @@ export class GameBoard {
   applyPattern (shape) {
     this.generateBoard();
     if (shape === 'Beacon') {
-      this.board[10][10] = true;
-      this.board[10][11] = true;
-      this.board[11][10] = true;
-      this.board[12][13] = true;
-      this.board[13][12] = true;
-      this.board[13][13] = true;
-    } else if (shape === 'Pulsar') {
-      this.board[11][13] = true;
-      this.board[11][14] = true;
-      this.board[11][15] = true;
-      this.board[11][19] = true;
-      this.board[11][20] = true;
-      this.board[11][21] = true;
-
-      this.board[13][11] = true;
-      this.board[14][11] = true;
-      this.board[15][11] = true;
-      this.board[13][16] = true;
-      this.board[14][16] = true;
-      this.board[15][16] = true;
-      this.board[13][18] = true;
-      this.board[14][18] = true;
-      this.board[15][18] = true;
-      this.board[13][23] = true;
-      this.board[14][23] = true;
-      this.board[15][23] = true;
-
-      this.board[16][13] = true;
-      this.board[16][14] = true;
-      this.board[16][15] = true;
-      this.board[16][19] = true;
-      this.board[16][20] = true;
-      this.board[16][21] = true;
-
-      this.board[18][13] = true;
-      this.board[18][14] = true;
-      this.board[18][15] = true;
-      this.board[18][19] = true;
-      this.board[18][20] = true;
-      this.board[18][21] = true;
-
-      this.board[19][11] = true;
-      this.board[20][11] = true;
-      this.board[21][11] = true;
-      this.board[19][16] = true;
-      this.board[20][16] = true;
-      this.board[21][16] = true;
-      this.board[19][18] = true;
-      this.board[20][18] = true;
-      this.board[21][18] = true;
-      this.board[19][23] = true;
-      this.board[20][23] = true;
-      this.board[21][23] = true;
-
-      this.board[23][13] = true;
-      this.board[23][14] = true;
-      this.board[23][15] = true;
-      this.board[23][19] = true;
-      this.board[23][20] = true;
-      this.board[23][21] = true;
+      this.board[3][3] = true;
+      this.board[3][4] = true;
+      this.board[4][3] = true;
+      this.board[5][6] = true;
+      this.board[6][5] = true;
+      this.board[6][6] = true;
     } else if (shape === 'Glider') {
-      this.board[21][22] = true;
-      this.board[22][23] = true;
-      this.board[23][21] = true;
-      this.board[23][22] = true;
-      this.board[23][23] = true;
+      this.board[3][3] = true;
+      this.board[4][4] = true;
+      this.board[5][2] = true;
+      this.board[5][3] = true;
+      this.board[5][4] = true;
     } else if (shape === 'Spaceship') {
-      this.board[21][22] = true;
-      this.board[22][23] = true;
-      this.board[23][21] = true;
-      this.board[23][22] = true;
-      this.board[23][23] = true;
+      this.board[3][4] = true;
+      this.board[3][5] = true;
+      this.board[4][3] = true;
+      this.board[4][4] = true;
+      this.board[4][5] = true;
+      this.board[4][6] = true;
+      this.board[5][3] = true;
+      this.board[5][4] = true;
+      this.board[5][6] = true;
+      this.board[5][7] = true;
+      this.board[6][5] = true;
+      this.board[6][6] = true;
+    } else if (shape === 'Pulsar') {
+      this.board[1][3] = true;
+      this.board[1][4] = true;
+      this.board[1][5] = true;
+      this.board[1][9] = true;
+      this.board[1][10] = true;
+      this.board[1][11] = true;
+
+      this.board[3][1] = true;
+      this.board[4][1] = true;
+      this.board[5][1] = true;
+      this.board[3][6] = true;
+      this.board[4][6] = true;
+      this.board[5][6] = true;
+      this.board[3][8] = true;
+      this.board[4][8] = true;
+      this.board[5][8] = true;
+      this.board[3][13] = true;
+      this.board[4][13] = true;
+      this.board[5][13] = true;
+
+      this.board[6][3] = true;
+      this.board[6][4] = true;
+      this.board[6][5] = true;
+      this.board[6][9] = true;
+      this.board[6][10] = true;
+      this.board[6][11] = true;
+
+      this.board[8][3] = true;
+      this.board[8][4] = true;
+      this.board[8][5] = true;
+      this.board[8][9] = true;
+      this.board[8][10] = true;
+      this.board[8][11] = true;
+
+      this.board[9][1] = true;
+      this.board[10][1] = true;
+      this.board[11][1] = true;
+      this.board[9][6] = true;
+      this.board[10][6] = true;
+      this.board[11][6] = true;
+      this.board[9][8] = true;
+      this.board[10][8] = true;
+      this.board[11][8] = true;
+      this.board[9][13] = true;
+      this.board[10][13] = true;
+      this.board[11][13] = true;
+
+      this.board[13][3] = true;
+      this.board[13][4] = true;
+      this.board[13][5] = true;
+      this.board[13][9] = true;
+      this.board[13][10] = true;
+      this.board[13][11] = true;
     }
   }
 }
