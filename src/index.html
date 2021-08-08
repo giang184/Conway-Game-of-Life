@@ -31,21 +31,28 @@
       </div>
       <div class="col-sm-1"></div>
       <div class="col-sm-3">
-        <form id="iteration">
-          <label for="number">Number of iterations: </label>
-          <select  id="number">
-            <option>5</option>
-            <option>10</option>
-            <option>20</option>
-            <option>50</option>
-          </select>
-          <div class="slidecontainer">
-            <label for="range">speed: </label>
-            <input type="range" min="150" max="1000" value="500" class="slider" id="myRange">
-          </div>
-          <br>
-          <button type="submit" class="btn-primary">Go!</button>
-        </form>
+        <div id="go">
+          <form id="iteration">
+            <label for="number">Number of iterations: </label>
+            <select  id="number">
+              <option>1</option>
+              <option>5</option>
+              <option>10</option>
+              <option>50</option>
+              <option>5000</option>
+            </select>
+            <div class="slidecontainer">
+              <label for="range">speed: </label>
+              <input type="range" min="150" max="1000" value="500" class="slider" id="myRange">
+            </div>
+            <br>
+            <button type="submit" class="btn-primary">Go!</button>
+          </form>
+        </div>
+        <div id="stop">
+          <label for="stoppage">click button to pause or choose a different iteration mode</label>
+          <button id="stoppage" class="btn-warning">Stop!</button>
+        </div>
       </div>
       <br><br><br><br><br><br>
         <div id="game-board"></div>

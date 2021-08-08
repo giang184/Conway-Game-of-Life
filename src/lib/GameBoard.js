@@ -63,9 +63,59 @@ export class GameBoard {
       this.board[13][12] = true;
       this.board[13][13] = true;
     } else if (shape === 'Pulsar') {
-      this.board[20][20] = true;
-      this.board[20][21] = true;
-      this.board[20][22] = true;
+      this.board[11][13] = true;
+      this.board[11][14] = true;
+      this.board[11][15] = true;
+      this.board[11][19] = true;
+      this.board[11][20] = true;
+      this.board[11][21] = true;
+
+      this.board[13][11] = true;
+      this.board[14][11] = true;
+      this.board[15][11] = true;
+      this.board[13][16] = true;
+      this.board[14][16] = true;
+      this.board[15][16] = true;
+      this.board[13][18] = true;
+      this.board[14][18] = true;
+      this.board[15][18] = true;
+      this.board[13][23] = true;
+      this.board[14][23] = true;
+      this.board[15][23] = true;
+
+      this.board[16][13] = true;
+      this.board[16][14] = true;
+      this.board[16][15] = true;
+      this.board[16][19] = true;
+      this.board[16][20] = true;
+      this.board[16][21] = true;
+
+      this.board[18][13] = true;
+      this.board[18][14] = true;
+      this.board[18][15] = true;
+      this.board[18][19] = true;
+      this.board[18][20] = true;
+      this.board[18][21] = true;
+
+      this.board[19][11] = true;
+      this.board[20][11] = true;
+      this.board[21][11] = true;
+      this.board[19][16] = true;
+      this.board[20][16] = true;
+      this.board[21][16] = true;
+      this.board[19][18] = true;
+      this.board[20][18] = true;
+      this.board[21][18] = true;
+      this.board[19][23] = true;
+      this.board[20][23] = true;
+      this.board[21][23] = true;
+
+      this.board[23][13] = true;
+      this.board[23][14] = true;
+      this.board[23][15] = true;
+      this.board[23][19] = true;
+      this.board[23][20] = true;
+      this.board[23][21] = true;
     } else if (shape === 'Pulsar') {
       this.board[20][20] = true;
       this.board[20][21] = true;

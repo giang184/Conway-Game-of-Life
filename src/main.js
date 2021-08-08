@@ -27,6 +27,7 @@ const renderBoard = (game) => {
 const addEventListeners = (game) => {
   const elCells = $('.cell');
   const elClearButton = $('#clear');
+  const elStopButton = $('#stoppage');
 
   elCells.off().on('click', function (event) {
     event.preventDefault();
@@ -52,12 +53,11 @@ const addEventListeners = (game) => {
     addEventListeners(game);
   });
 
-  $('form#iteration').off().submit(async function (event) {
+  $('form#iteration').off().submit(function (event) {
     event.preventDefault();
     const num = parseInt($('#number').val());
     const speed = parseInt($('#myRange').val());
-    console.log(typeof num);
-    console.log(num);
+
     for (let i = 1; i <= num; i++) {
       setTimeout(function timer () {
         console.log(i);
@@ -65,12 +65,25 @@ const addEventListeners = (game) => {
         renderBoard(game);
         addEventListeners(game);
       }, i * speed);
+      $('#go').hide();
+      $('#stop').show();
     }
+  });
+
+  elStopButton.off().on('click', async function () {
+    $('#stop').hide();
+    $('#go').show();
+    let id = window.setTimeout(function () {}, 0);
+    while (id--) {
+      window.clearTimeout(id);
+    }
+    renderBoard(game);
+    addEventListeners(game);
   });
 };
 
 const main = () => {
-  const game = new GameBoard(25, 50);
+  const game = new GameBoard(30, 50);
   renderBoard(game);
   addEventListeners(game);
 };
