@@ -28,6 +28,14 @@ const addEventListeners = (game) => {
   const elCells = $('.cell');
   const elClearButton = $('#clear');
   const elStopButton = $('#stoppage');
+  const elpattern = $('#shape');
+
+  elpattern.off().on('change', function (event) {
+    const shape = $('#shape').val();
+    game.applyPattern(shape);
+    renderBoard(game);
+    addEventListeners(game);
+  });
 
   elCells.off().on('click', function (event) {
     event.preventDefault();
@@ -41,14 +49,6 @@ const addEventListeners = (game) => {
 
   elClearButton.off().on('click', async function () {
     game.generateBoard();
-    renderBoard(game);
-    addEventListeners(game);
-  });
-
-  $('form#pattern').off().submit(async function (event) {
-    event.preventDefault();
-    const shape = $('#shape').val();
-    game.applyPattern(shape);
     renderBoard(game);
     addEventListeners(game);
   });

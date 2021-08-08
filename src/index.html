@@ -10,37 +10,44 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-sm-4" style="background-color:rgb(229, 190, 190);">
+      <div class="col-sm-4">
         <h2>Conway's Game of Life</h2>
+        <p>The Game of Life is a zero player game whose evolution is determined by its initial state. The game is set by creating an initial configuration by clicking on specific cells or choosing from a preset pattern. When the game is started, the state of the cells will live or die according to a set of rules. (see below)</p>
+      
+        <h2>Rules</h2>
+        <ol>
+          <li>Any live cell with fewer than two live neighbours dies.</li>
+          <li>Any live cell with two or three live neighbours lives on to the next iteration.</li>
+          <li>Any live cell with more than three live neighbours dies.</li>
+          <li>Any dead cell with exactly three live neighbours becomes a live cell.</li>
+        </ol>
       </div>
       <div class="col-sm-1"></div>
       <div class="col-sm-3">
-        <form id="pattern">
-          <label for="shape">Create your own board by clicking on the cells or choose a set pattern below: </label>
-          <select  id="shape">
-            <option>Beacon</option>
-            <option>Pulsar</option>
-            <option>Glider</option>
-            <option>Spaceship</option>
-          </select>
-          <br><br>
-          <button type="submit" class="btn-success">Apply Pattern</button>
-        </form>
+        <h2>Board Configuration</h2>
+        <label for="shape">Create your own board by clicking on the cells or choose a set pattern below: </label>
+        <select class="form-control" id="shape">
+          <option>---</option>
+          <option>Beacon</option>
+          <option>Pulsar</option>
+          <option>Glider</option>
+          <option>Spaceship</option>
+        </select>
         <br><button id="clear" class="btn-danger">Clear Board</button>
-        <br><br>
       </div>
       <div class="col-sm-1"></div>
       <div class="col-sm-3">
         <div id="go">
           <form id="iteration">
             <label for="number">Number of iterations: </label>
-            <select  id="number">
+            <select class="form-control" id="number">
               <option>1</option>
               <option>5</option>
               <option>10</option>
               <option>50</option>
               <option>5000</option>
             </select>
+            <br>
             <div class="slidecontainer">
               <label for="range">speed: </label>
               <input type="range" min="150" max="1000" value="500" class="slider" id="myRange">
@@ -54,8 +61,10 @@
           <button id="stoppage" class="btn-warning">Stop!</button>
         </div>
       </div>
-      <br><br><br><br><br><br>
-        <div id="game-board"></div>
+    </div>
+    <div class="row">
+      <br>
+      <div id="game-board"></div>
     </div>
   </div>
 </body>

@@ -116,12 +116,18 @@ export class GameBoard {
       this.board[23][19] = true;
       this.board[23][20] = true;
       this.board[23][21] = true;
-    } else if (shape === 'Pulsar') {
-      this.board[20][20] = true;
-      this.board[20][21] = true;
-      this.board[20][22] = true;
-    } else {
-      this.board[20][20] = true;
+    } else if (shape === 'Glider') {
+      this.board[21][22] = true;
+      this.board[22][23] = true;
+      this.board[23][21] = true;
+      this.board[23][22] = true;
+      this.board[23][23] = true;
+    } else if (shape === 'Spaceship') {
+      this.board[21][22] = true;
+      this.board[22][23] = true;
+      this.board[23][21] = true;
+      this.board[23][22] = true;
+      this.board[23][23] = true;
     }
   }
 }

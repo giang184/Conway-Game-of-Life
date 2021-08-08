@@ -30,6 +30,7 @@
 
 .container {
   margin-top:30px;
+  background-color: white;
 }
 
 .slidecontainer {
@@ -52,4 +53,11 @@
 
 #stop {
   display: none;
+}
+
+h2 {
+  background-color: rgb(200, 165, 214);
+}
+body {
+  background-color: darkgoldenrod;
 }
